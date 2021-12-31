@@ -4,7 +4,7 @@
             Toko
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="<?php echo base_url() ?>"><i class="fa fa-dashboard"></i> Home</a></li>
             <li><a href="#">Toko</a></li>
             <li class="active">Performa Toko</li>
         </ol>
@@ -45,14 +45,14 @@
                             <tr>
                                 <td><?php echo $i;
                                     $i++ ?></td>
-                                <td><?php echo $akun['nama'];?></td>
-                                <td><?php echo $akun['alamat'];?></td>
-                                <td><?php echo $akun['jml_titip'];?></td>
-                                <td><?php echo $akun['jml_laku'];?></td>
-                                <td><?php echo $akun['jml_retur'];?></td>
+                                <td><?php echo $akun['nama']; ?></td>
+                                <td><?php echo $akun['alamat']; ?></td>
+                                <td><?php echo $akun['jml_titip']; ?></td>
+                                <td><?php echo $akun['jml_laku']; ?></td>
+                                <td><?php echo $akun['jml_retur']; ?></td>
                                 <td>
                                     <div class="progress-group">
-                                    <span class="progress-number pull-right btn-xs bg-gray btn-flat"><small><?php echo $akun['performa'];?>%</small></span>
+                                        <span class="progress-number pull-right btn-xs bg-gray btn-flat"><small><?php echo $akun['performa']; ?>%</small></span>
                                         <div class="progress">
                                             <div class="progress-bar progress-bar-green" style="width: <?php echo $akun['performa']; ?>%"></div>
                                         </div>
@@ -64,8 +64,6 @@
                         <?php } ?>
                     </tbody>
                 </table>
-
-
             </div>
             <!-- /.box-body -->
         </div>
@@ -84,7 +82,7 @@
             </div>
             <div class="box-body">
 
-                <table class="table table-striped table-hover text-center">
+                <table id="dataTable2" class="table table-striped table-hover text-center">
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">No</th>
@@ -104,14 +102,14 @@
                             <tr>
                                 <td><?php echo $i;
                                     $i++ ?></td>
-                                <td><?php echo $akun['nama'];?></td>
-                                <td><?php echo $akun['alamat'];?></td>
-                                <td><?php echo $akun['jml_titip'];?></td>
-                                <td><?php echo $akun['jml_laku'];?></td>
-                                <td><?php echo $akun['jml_retur'];?></td>
+                                <td><?php echo $akun['nama']; ?></td>
+                                <td><?php echo $akun['alamat']; ?></td>
+                                <td><?php echo $akun['jml_titip']; ?></td>
+                                <td><?php echo $akun['jml_laku']; ?></td>
+                                <td><?php echo $akun['jml_retur']; ?></td>
                                 <td>
                                     <div class="progress-group">
-                                    <span class="progress-number pull-right btn-xs bg-gray btn-flat"><small><?php echo $akun['performa'];?>%</small></span>
+                                        <span class="progress-number pull-right btn-xs bg-gray btn-flat"><small><?php echo $akun['performa']; ?>%</small></span>
                                         <div class="progress">
                                             <div class="progress-bar progress-bar-green" style="width: <?php echo $akun['performa']; ?>%"></div>
                                         </div>

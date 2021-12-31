@@ -5,7 +5,7 @@
         </h1>
         <ol class="breadcrumb">
             <li><a href="<?php echo base_url(); ?>"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="<?php echo base_url('Penjualan') ?>">Nota Penjualan</a></li>
+            <li><a href="<?php echo site_url('Penjualan') ?>">Nota Penjualan</a></li>
             <li class="active">Item</li>
         </ol>
     </section>
@@ -41,7 +41,6 @@
                     <thead class="thead-dark">
                         <tr>
                             <th class="">No</th>
-                            <!-- <th class="">Nota Penjualan</th> -->
                             <th class="">Nama Roti</th>
                             <th class="">Jumlah Titip</th>
                             <th class="">Jumlah Retur</th>
@@ -57,18 +56,17 @@
                             <tr>
                                 <td><?php echo $i;
                                     $i++ ?></td>
-                                <!-- <td class=""><?php //echo $item['nota_id']; 
-                                                    ?></td> -->
                                 <td class=""><?php echo $item['roti_nama']; ?></td>
                                 <td class=""><?php echo $item['jml_titip']; ?></td>
                                 <td class=""><?php echo $item['jml_retur']; ?></td>
                                 <td class=""><?php echo $item['jml_laku']; ?></td>
                                 <td class=""><?php echo $item['harga']; ?></td>
                                 <td class=""><?php echo $item['subtotal']; ?></td>
-
                                 <td>
-                                    <a class="btn btn-sm btn-primary" href="<?php echo site_url('item_penjualan/edit/' . $item['id']); ?>">Edit</a>
-                                    <a class="btn btn-sm btn-danger" href="<?php echo site_url('item_penjualan/delete/' . $item['id']); ?>" onclick="return confirm('Yakin Hapus Nomer Nota Penitipan &quot;<?php echo $item['id']; ?>&quot;?')">Hapus</a>
+                                    <div class="btn-group">
+                                        <a class="btn btn-sm btn-info" href="<?php echo site_url('item_penjualan/edit/' . $item['id']); ?>"><i class="fa fa-fw fa-pencil"></i> Edit</a>
+                                        <a class="btn btn-sm btn-danger" href="<?php echo site_url('item_penjualan/delete/' . $item['id']); ?>" onclick="return confirm('Hapus Item <?php echo $item['roti_nama']; ?>?')"><i class="fa fa-fw fa-trash-o"></i> Hapus</a>
+                                    </div>
                                 </td>
                             </tr>
                         <?php } ?>

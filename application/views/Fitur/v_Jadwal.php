@@ -27,15 +27,16 @@
             </div>
             <div class="box-body table-responsive">
                 <table id="dataTable" class="table table-striped table-hover">
-                    <thead class="thead-dark text-center">
+                    <thead class="thead-dark">
                         <tr>
-                            <th class="text-center">No</th>
-                            <th class="text-center">Nama Toko</th>
-                            <th class="text-center">Sales</th>
-                            <th class="text-center">Alamat</th>
-                            <th class="text-center">Tanggal Penitipan</th>
-                            <th class="text-center">Tanggal Pengambilan</th>
-                            <th class="text-center">Keterangan</th>
+                            <th>No</th>
+                            <th>Nama Toko</th>
+                            <th>Sales</th>
+                            <th>Alamat</th>
+                            <th>Tanggal Penitipan</th>
+                            <th>Tanggal Pengambilan</th>
+                            <th>Keterangan</th>
+                            <th>Kelola</th>
                         </tr>
                     </thead>
                     <tbody class="text-center">
@@ -44,28 +45,34 @@
                             <tr>
                                 <td><?php echo $i;
                                     $i++ ?></td>
-                                <td class="text-left"><?php echo $item['toko_nama']; ?></td>
-                                <td class="text-center"><?php echo $item['sales_nama']; ?></td>
-                                <td class="text-center"><?php echo $item['toko_alamat']; ?></td>
-                                <td class="text-center"><?php echo $item['tanggal_titip']; ?></td>
-                                <td class="text-center"><?php echo $item['tanggal_ambil']; ?></td>
-                                <td class="text-center"><span class="label text-center <?php
-                                                                                        if ($item['status'] >= 1) {
-                                                                                            echo "bg-green";
-                                                                                        } elseif ($item['status'] == 0) {
-                                                                                            echo "bg-yellow";
-                                                                                        } elseif ($item['status'] < 0) {
-                                                                                            echo "bg-red";
-                                                                                        } ?>"><?php
-                            // Buat keterangan apabila terlambat
-                            if ($item['status'] >= 1) {
-                                echo "Masih " . $item['status'] . " hari";
-                            } elseif ($item['status'] == 0) {
-                                echo "Ambil hari ini";
-                            } elseif ($item['status'] < 0) {
-                                echo "Telat " . abs($item['status'] * -1) . " hari";
-                            } ?>
+                                <td><?php echo $item['toko_nama']; ?></td>
+                                <td><?php echo $item['sales_nama']; ?></td>
+                                <td><?php echo $item['toko_alamat']; ?></td>
+                                <td><?php echo $item['tanggal_titip']; ?></td>
+                                <td><?php echo $item['tanggal_ambil']; ?></td>
+                                <td><span class="label 
+                                <?php
+                                // Set warma label
+                                if ($item['status'] >= 1) {
+                                    echo "bg-green";
+                                } elseif ($item['status'] == 0) {
+                                    echo "bg-yellow";
+                                } elseif ($item['status'] < 0) {
+                                    echo "bg-red";
+                                } ?>">
+                                        <?php
+                                        // Buat keterangan sesuai waktu pengambilan
+                                        if ($item['status'] >= 1) {
+                                            echo "Masih " . $item['status'] . " hari";
+                                        } elseif ($item['status'] == 0) {
+                                            echo "Ambil hari ini";
+                                        } elseif ($item['status'] < 0) {
+                                            echo "Telat " . abs($item['status'] * -1) . " hari";
+                                        } ?>
                                     </span>
+                                </td>
+                                <td>
+                                    <a class="btn btn-sm btn-primary" href="<?php echo site_url('Penjualan/addQuick/' . $item['titip_id']); ?>" onclick="return confirm('Buat nota penjualan &quot;<?php echo $item['toko_nama']; ?>&quot;?')">Buat Nota Jual</a>
                                 </td>
                             </tr>
                         <?php } ?>

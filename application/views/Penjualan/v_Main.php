@@ -23,19 +23,18 @@
                         <i class="fa fa-minus"></i></button>
                 </div>
             </div>
-            <div class="box-body">
+            <div class="box-body table-responsive">
 
 
                 <table id="dataTable" class="table table-striped table-hover text-center">
                     <thead class="thead-dark">
                         <tr>
-                            <th>Nota Penjualan</th>
+                            <th>No Nota</th>
                             <th>Nama Toko</th>
                             <th>Nama Sales</th>
                             <th>Tanggal</th>
                             <th>Nota Titip</th>
                             <th>Item</th>
-                            <th >Kelola</th>
                             <th >Kelola</th>
                         </tr>
                     </thead>
@@ -54,10 +53,10 @@
                                 <td class=""><a class="btn btn-sm btn-info" href="<?php echo site_url('Item_Penjualan/byNotaID/' . $item['id']); ?>">Lihat Item</a></td>
 
                                 <td>
-                                    <a class="btn btn-sm btn-primary" href="<?php echo site_url('penjualan/edit/' . $item['id']); ?>">Edit</a>
-                                </td>
-                                <td>
-                                    <a class="btn btn-sm btn-danger" href="<?php echo site_url('penjualan/delete/' . $item['id']); ?>" onclick="return confirm('Yakin hapus nota penjualan no. <?php echo $item['id'] . ' untuk ' . $item['toko_nama']; ?>?')">Hapus</a>
+                                    <div class="btn-group">
+                                        <a class="btn btn-sm btn-info" href="<?php echo site_url('penjualan/edit/' . $item['id']); ?>"><i class="fa fa-fw fa-pencil"></i> Edit</a>
+                                        <a class="btn btn-sm btn-danger" href="<?php echo site_url('penjualan/delete/' . $item['id']); ?>" onclick="return confirm('Hapus Nota Penjualan No. <?php echo $item['id'] . ' untuk ' . $item['toko_nama']; ?>?')"><i class="fa fa-fw fa-trash-o"></i> Hapus</a>
+                                    </div>
                                 </td>
                             </tr>
                         <?php } ?>

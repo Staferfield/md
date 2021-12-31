@@ -16,12 +16,7 @@ class Item_Penjualan extends CI_Controller{
     }
     
     public function index() {
-        $data['item_penjualan'] = $this->M_item_penjualan->getItemPenjualan();
-
-        $this->load->view('Main/v_Header');
-        $this->load->view('Main/v_Sidebar');
-        $this->load->view('Item_Penjualan/v_Main', $data);
-        $this->load->view('Main/v_Footer');
+        redirect('Penjualan');
     }
 
     public function byNotaID($nota_id) {

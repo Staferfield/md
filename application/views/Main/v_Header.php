@@ -25,7 +25,7 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
 
-       <link rel="stylesheet" href="<?php echo base_url().'' ?>dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="<?php echo base_url().'' ?>dist/css/skins/_all-skins.min.css">
   <!-- Morris chart -->
   <!-- <link rel="stylesheet" href="<?php echo base_url().'' ?>bower_components/morris.js/morris.css"> -->
   <!-- jvectormap -->
@@ -42,7 +42,7 @@
 
 <header class="main-header">
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="<?php echo base_url(); ?>" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>M</b></span>
       <!-- logo for regular state and mobile devices -->
@@ -91,10 +91,6 @@
                 </div>
               </li>
             </ul>
-          </li>
-          <!-- Control Sidebar Toggle Button -->
-          <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
           </li>
         </ul>
       </div>

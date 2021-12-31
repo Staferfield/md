@@ -16,7 +16,7 @@
         <!-- Default box -->
         <div class="box box-info box-solid">
             <div class="box-header with-border">
-                <h3 class="box-title">Performa Roti (Bulan Lalu)</h3>
+                <h3 class="box-title">Performa Roti</h3> <small>(Bulan Lalu)</small>
 
                 <div class="box-tools pull-right">
                     <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="" data-original-title="Collapse">
@@ -77,7 +77,7 @@
         <!-- Default box -->
         <div class="box box-info box-solid">
             <div class="box-header with-border">
-                <h3 class="box-title">Performa Roti (Keseluruhan)</h3>
+                <h3 class="box-title">Performa Roti</h3> <small>(Keseluruhan)</small>
 
                 <div class="box-tools pull-right">
                     <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="" data-original-title="Collapse">
@@ -86,7 +86,7 @@
             </div>
             <div class="box-body">
 
-                <table class="table table-striped table-hover text-center">
+                <table id="dataTable2" class="table table-striped table-hover text-center">
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">No</th>

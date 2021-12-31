@@ -105,7 +105,7 @@ class M_toko extends CI_Model {
 		$this->db->join('nota_penitipan','nota_penitipan.toko_id=toko.id', 'left');
 		$this->db->join('user','user.id=nota_penitipan.sales_id', 'left');
 		$this->db->where('status', 0);
-		$this->db->where('sales_id', $id);
+		$this->db->like('sales_id', $id, 'none');
 		$this->db->order_by('status', 'ASC');
 
         $query = $this->db->get();

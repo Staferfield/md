@@ -1,6 +1,6 @@
         <!-- Form untuk menambahkan data item -->
         <!-- Default box -->
-        <div class="box collapsed-box">
+        <div class="box box-success box-solid collapsed-box">
             <div class="box-header with-border">
                 <h3 class="box-title">Tambah Item Roti</h3>
 

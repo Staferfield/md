@@ -34,5 +34,4 @@
     </section>
     <!-- /.content -->
 
-
 <?php $this->load->view('Script/peta') ?>

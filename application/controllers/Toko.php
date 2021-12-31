@@ -9,10 +9,6 @@ class Toko extends CI_Controller{
             redirect('Login');
 
         }
-        // Redirect untuk sales, karena sales tidak dapat memodifikasi toko
-        if($this->session->userdata('level') == 4){
-            redirect('Dashboard');
-        }
     }
     
     public function index() {

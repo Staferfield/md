@@ -22,7 +22,7 @@
                         <i class="fa fa-minus"></i></button>
                 </div>
             </div>
-            <div class="box-body">
+            <div class="box-body table-responsive">
 
                 <table id="dataTable" class="table table-striped table-hover">
                     <thead class="thead-dark">
@@ -43,8 +43,10 @@
                                 <td><?php echo 'Rp. ' . number_format($item['harga'], 0, ',', '.'); ?></td>
 
                                 <td>
-                                    <a class="btn btn-primary" href="<?php echo site_url('roti/edit/' . $item['id']); ?>">Edit</a>
-                                    <a class="btn btn-danger" href="<?php echo site_url('roti/delete/' . $item['id']); ?>" onclick="return confirm('Yakin Hapus Post &quot;<?php echo $item['nama']; ?>&quot;?')">Hapus</a>
+                                    <div class="btn-group">
+                                        <a class="btn btn-sm btn-info" href="<?php echo site_url('roti/edit/' . $item['id']); ?>"><i class="fa fa-fw fa-pencil"></i> Edit</a>
+                                        <a class="btn btn-sm btn-danger" href="<?php echo site_url('roti/delete/' . $item['id']); ?>" onclick="return confirm('Hapus Roti &quot;<?php echo $item['nama']; ?>&quot;?')"><i class="fa fa-fw fa-trash-o"></i> Hapus</a>
+                                    </div>
                                 </td>
                             </tr>
                         <?php } ?>

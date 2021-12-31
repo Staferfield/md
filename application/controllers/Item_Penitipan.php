@@ -14,12 +14,7 @@ class Item_Penitipan extends CI_Controller{
     }
     
     public function index() {
-        $data['item_penitipan'] = $this->M_item_penitipan->getItemPenitipan();
-
-        $this->load->view('Main/v_Header');
-        $this->load->view('Main/v_Sidebar');
-        $this->load->view('Item_Penitipan/v_Main', $data);
-        $this->load->view('Main/v_Footer');
+        redirect('Penitipan');
     }
 
     public function byNotaID($nota_id) {

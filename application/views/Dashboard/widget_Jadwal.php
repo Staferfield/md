@@ -1,4 +1,6 @@
-<!-- Default box -->
+
+        <div class="col-md-12">
+            <!-- Default box -->
 <div class="box box-info box-solid">
     <div class="box-header with-border">
         <h3 class="box-title">Jadwal Pengambilan</h3>
@@ -20,7 +22,7 @@
                     <!-- <th class="">Tanggal Penitipan</th> -->
                     <th class="">Tanggal Pengambilan</th>
                     <th class="">Keterangan</th>
-                    <th class="">Keterangan</th>
+                    <th class="">Kelola</th>
                 </tr>
             </thead>
             <tbody class="">
@@ -55,7 +57,9 @@
                                     echo "Telat " . abs($item['status'] * -1) . " hari";
                                 } ?> </span>
                         </td>
-                        <td class=""><a class="btn btn-sm btn-primary" href="<?php echo site_url('Penjualan/addQuick/'.$item['titip_id']); ?>" onclick="return confirm('Buat nota penjualan &quot;<?php echo $item['toko_nama']; ?>&quot;?')">Buat Nota Jual</a></td>
+                        <td>
+                            <a class="btn btn-sm btn-primary" href="<?php echo site_url('Penjualan/addQuick/'.$item['titip_id']); ?>" onclick="return confirm('Buat nota penjualan &quot;<?php echo $item['toko_nama']; ?>&quot;?')">Buat Nota Jual</a>
+                        </td>
                         
                     </tr>
                 <?php } ?>
@@ -65,3 +69,5 @@
     <!-- /.box-body -->
 </div>
 <!-- /.box -->
+</div>
+        <!-- /.col -->

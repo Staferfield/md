@@ -1,4 +1,4 @@
-<div class="row">
+
         <div class="col-md-12">
           <div class="box box-info">
             <div class="box-header with-border">
@@ -29,7 +29,7 @@
                   </p>
                   <div class="chart">
                     <!-- Sales Chart Canvas -->
-                    <canvas id="pendapatanChart" style="height: 300px;"></canvas>
+                    <canvas id="pendapatanChart" style="height: 400px;"></canvas>
                   </div>
                   <!-- /.chart-responsive -->
                 </div>
@@ -44,5 +44,3 @@
           <!-- /.box -->
         </div>
         <!-- /.col -->
-      </div>
-      <!-- /.row -->

@@ -15,6 +15,9 @@
         <div class="box box-info box-solid">
             <div class="box-header">
                 <h3 class="box-title">Data Karyawan</h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                </div>
             </div>
             <!-- /.box-header -->
 
@@ -46,20 +49,20 @@
                                 <td><?php echo $akun['no_hp']; ?></td>
                                 <td><?php
                                     if ($akun['level'] == 0) {
-                                        echo "Root";
+                                        echo '<span class="label bg-red">Root</span>';
                                     } elseif ($akun['level'] == 1) {
-                                        echo "Owner";
+                                        echo '<span class="label bg-maroon">Owner</span>';
                                     } elseif ($akun['level'] == 2) {
-                                        echo "Manajer";
+                                        echo '<span class="label bg-aqua">Manajer</span>';
                                     } elseif ($akun['level'] == 4) {
-                                        echo "Sales";
+                                        echo '<span class="label bg-purple">Sales</span>';
                                     };
                                     ?></td>
 
                                 <td>
                                     <div class="btn-group">
-                                        <a class="btn btn-sm btn-primary" href="<?php echo site_url('User/edit/' . $akun['id']); ?>">Edit</a>
-                                        <a class="btn btn-sm btn-danger" href="<?php echo site_url('User/delete/' . $akun['id']); ?>" onclick="return confirm('Hapus akun &quot;<?php echo $akun['nama']; ?>&quot;?')">Hapus</a>
+                                        <a class="btn btn-sm btn-info" href="<?php echo site_url('User/edit/' . $akun['id']); ?>"><i class="fa fa-fw fa-pencil"></i> Edit</a>
+                                        <a class="btn btn-sm btn-danger" href="<?php echo site_url('User/delete/' . $akun['id']); ?>" onclick="return confirm('Hapus akun &quot;<?php echo $akun['nama']; ?>&quot;?')"><i class="fa fa-fw fa-trash-o"></i> Hapus</a>
                                     </div>
                                 </td>
                             </tr>

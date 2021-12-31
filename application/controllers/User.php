@@ -9,7 +9,7 @@ class User extends CI_Controller{
             redirect('Login');
 
         }
-        // Redirect untuk sales
+        // Redirect untuk sales, karena sales tidak dapat memodifikasi data karyawan
         if($this->session->userdata('level') == 4){
             redirect('Dashboard');
         }

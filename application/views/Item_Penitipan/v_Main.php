@@ -4,9 +4,9 @@
             Item Penitipan
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Penitipan</a></li>
-            <li class="active">Item Penitipan</li>
+        <li><a href="<?php echo base_url(); ?>"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="<?php echo site_url('Penitipan') ?>">Nota Penitipan</a></li>
+            <li class="active">Item</li>
         </ol>
     </section>
 
@@ -54,8 +54,10 @@
                                 <td class=""><?php echo $item['roti_nama']; ?></td>
                                 <td class=""><?php echo $item['jml_titip']; ?></td>
                                 <td>
-                                    <a class="btn btn-primary" href="<?php echo site_url('Item_Penitipan/edit/' . $item['id']); ?>">Edit</a>
-                                    <a class="btn btn-danger" href="<?php echo site_url('Item_Penitipan/delete/' . $item['nota_id'] . '/' . $item['id']); ?>" onclick="return confirm('Yakin hapus item ke-<?php echo $i . ' ' . $item['roti_nama']; ?>?')">Hapus</a>
+                                    <div class="btn-group">
+                                        <a class="btn btn-sm btn-info" href="<?php echo site_url('item_penitipan/edit/' . $item['id']); ?>"><i class="fa fa-fw fa-pencil"></i> Edit</a>
+                                        <a class="btn btn-sm btn-danger" href="<?php echo site_url('item_penitipan/delete/' . $item['id']); ?>" onclick="return confirm('Hapus Item <?php echo $item['roti_nama']; ?>?')"><i class="fa fa-fw fa-trash-o"></i> Hapus</a>
+                                    </div>
                                 </td>
                             </tr>
                         <?php } ?>

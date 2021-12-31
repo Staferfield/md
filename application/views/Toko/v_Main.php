@@ -23,13 +23,11 @@
                 </div>
             </div>
             <div class="box-body table-responsive">
-
-
                 <!-- /.box-header -->
+
                 <div class="box-header">
                     <a class="btn btn-success" href="<?php echo site_url('toko/add'); ?>">Tambah Toko</a>
                 </div>
-                <!-- /.box-header -->
 
                 <table id="dataTable" class="table table-striped table-hover">
                     <thead class="thead-dark text-center">
@@ -40,9 +38,6 @@
                             <th class="text-center">Alamat</th>
                             <th class="text-center">No Telp</th>
                             <th class="text-center">Keterangan</th>
-                            <!-- Tidak Perlu -->
-                            <!-- <th class="text-center">Geo Longitude</th>
-                <th class="text-center">Geo Lattitude</th> -->
                             <th class="text-center">Kelola</th>
                         </tr>
                     </thead>
@@ -58,15 +53,11 @@
                                 <td class="text-center"><?php echo $item['no_telp']; ?></td>
                                 <td class="text-center"><?php echo $item['keterangan']; ?></td>
 
-                                <!-- Tidak Perlu -->
-                                <!-- <td class="text-center"><?php //echo $item['geo_latt']; 
-                                                                ?></td>
-                <td class="text-center"><?php //echo $item['geo_long']; 
-                                        ?></td> -->
-
                                 <td>
-                                    <a class="btn btn-sm btn-success" href="<?php echo site_url('toko/edit/' . $item['id']); ?>">Edit</a>
-                                    <a class="btn btn-sm btn-danger" href="<?php echo site_url('toko/delete/' . $item['id']); ?>" onclick="return confirm('Yakin Hapus Post &quot;<?php echo $item['nama']; ?>&quot;?')">Hapus</a>
+                                    <div class="btn-group">
+                                        <a class="btn btn-sm btn-info" href="<?php echo site_url('toko/edit/' . $item['id']); ?>"><i class="fa fa-fw fa-pencil"></i> Edit</a>
+                                        <a class="btn btn-sm btn-danger" href="<?php echo site_url('toko/delete/' . $item['id']); ?>" onclick="return confirm('Hapus Toko &quot;<?php echo $item['nama']; ?>&quot;?')"><i class="fa fa-fw fa-trash-o"></i> Hapus</a>
+                                    </div>
                                 </td>
                             </tr>
                         <?php } ?>
@@ -80,4 +71,3 @@
 
     </section>
     <!-- /.content -->
-    </div>

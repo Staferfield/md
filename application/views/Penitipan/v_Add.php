@@ -4,9 +4,9 @@
        Nota Penitipan
      </h1>
      <ol class="breadcrumb">
-       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-       <li><a href="#">Penitipan</a></li>
-       <li class="active">Nota Penitipan</li>
+       <li><a href="<?php echo base_url(); ?>"><i class="fa fa-dashboard"></i> Home</a></li>
+       <li><a href="<?php echo site_url('Penitipan'); ?>">Nota Penitipan</a></li>
+       <li class="active">Buat</li>
      </ol>
    </section>
 
@@ -14,10 +14,10 @@
    <section class="content">
 
      <!-- Default box -->
-     <div class="box box-success">
+     <div class="box box-success box-solid">
        <!-- box-header -->
        <div class="box-header with-border">
-         <h3 class="box-title">Tambah Nota Penitipan</h3>
+         <h3 class="box-title">Buat Nota Penitipan</h3>
 
          <div class="box-tools pull-right">
            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
