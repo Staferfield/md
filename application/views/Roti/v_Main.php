@@ -23,14 +23,13 @@
                 </div>
             </div>
             <div class="box-body table-responsive">
-
                 <table id="dataTable" class="table table-striped table-hover">
                     <thead class="thead-dark">
                         <tr>
-                            <th class="">No</th>
-                            <th class="">Nama</th>
-                            <th class="">Harga</th>
-                            <th class="">Kelola</th>
+                            <th>No</th>
+                            <th>Nama</th>
+                            <th>Harga (Rp.)</th>
+                            <th>Kelola</th>
                         </tr>
                     </thead>
                     <tbody class="">
@@ -40,7 +39,8 @@
                                 <td><?php echo $i;
                                     $i++ ?></td>
                                 <td class="text-left font-weight-bold"><?php echo $item['nama']; ?></td>
-                                <td><?php echo 'Rp. ' . number_format($item['harga'], 0, ',', '.'); ?></td>
+                                <!-- TODO -> do this to other as well -->
+                                <td><?php echo number_format($item['harga'], 0, ',', '.'); ?></td>
 
                                 <td>
                                     <div class="btn-group">
@@ -58,9 +58,7 @@
         </div>
         <!-- /.box -->
 
-
         <?php $this->load->view('Roti/v_Tambah') ?>
-
 
     </section>
     <!-- /.content -->

@@ -26,7 +26,6 @@
                 $i = 1;
                 foreach ($penjualan_monthly as $data) {
                     echo '"' . date_format(new DateTime($data['tanggal']), 'M Y');
-
                     if ($i < $max) {
                         echo '", ';
                     } else {
@@ -48,7 +47,6 @@
                         $i = 1;
                         foreach ($penjualan_monthly as $data) {
                             echo $data['jml_titip'];
-
                             if ($i < $max) {
                                 echo ', ';
                             }
@@ -69,7 +67,6 @@
                         $i = 1;
                         foreach ($penjualan_monthly as $data) {
                             echo $data['jml_laku'];
-
                             if ($i < $max) {
                                 echo ', ';
                             }
@@ -130,7 +127,7 @@
 
 
         // -----------------------
-        // - CHART PENJUALAN -
+        // - MONTHLY EARNING CHART -
         // -----------------------
 
         // Get context with jQuery - using jQuery's .get() method.
@@ -145,7 +142,6 @@
                 $i = 1;
                 foreach ($penjualan_monthly as $data) {
                     echo '"' . date_format(new DateTime($data['tanggal']), 'M Y');
-
                     if ($i < $max) {
                         echo '", ';
                     } else {
@@ -167,7 +163,6 @@
                     $i = 1;
                     foreach ($penjualan_monthly as $data) {
                         echo $data['total'];
-
                         if ($i < $max) {
                             echo ', ';
                         }
@@ -177,12 +172,50 @@
             }]
         };
 
+        var pendapatanChartOptions = {
+            // Boolean - If we should show the scale at all
+            showScale: true,
+            // Boolean - Whether grid lines are shown across the chart
+            scaleShowGridLines: true,
+            // String - Colour of the grid lines
+            scaleGridLineColor: 'rgba(0,0,0,.05)',
+            // Number - Width of the grid lines
+            scaleGridLineWidth: 2,
+            // Boolean - Whether to show horizontal lines (except X axis)
+            scaleShowHorizontalLines: true,
+            // Boolean - Whether to show vertical lines (except Y axis)
+            scaleShowVerticalLines: true,
+            // Boolean - Whether the line is curved between points
+            bezierCurve: true,
+            // Number - Tension of the bezier curve between points
+            bezierCurveTension: 0.3,
+            // Boolean - Whether to show a dot for each point
+            pointDot: false,
+            // Number - Radius of each point dot in pixels
+            pointDotRadius: 4,
+            // Number - Pixel width of point dot stroke
+            pointDotStrokeWidth: 2,
+            // Number - amount extra to add to the radius to cater for hit detection outside the drawn point
+            pointHitDetectionRadius: 20,
+            // Boolean - Whether to show a stroke for datasets
+            datasetStroke: true,
+            // Number - Pixel width of dataset stroke
+            datasetStrokeWidth: 4,
+            // Boolean - Whether to fill the dataset with a color
+            datasetFill: true,
+            // String - A legend template
+            legendTemplate: '<ul class=\'<%=name.toLowerCase()%>-legend\'><% for (var i=0; i<datasets.length; i++){%><li><span style=\'background-color:<%=datasets[i].lineColor%>\'></span><%=datasets[i].label%></li><%}%></ul>',
+            // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
+            maintainAspectRatio: true,
+            // Boolean - whether to make the chart responsive to window resizing
+            responsive: true
+        };
 
         // Create the line chart
-        pendapatanChart.Line(pendapatanChartData, ChartOptions);
+        pendapatanChart.Line(pendapatanChartData, pendapatanChartOptions);
 
         // ---------------------------
-        // - END CHART PENJUALAN -
+        // - END MONTHLY EARNING CHART -
         // ---------------------------
 
 
@@ -226,7 +259,6 @@
 
         barChartOptions.datasetFill = false
         barChart.Bar(barChartData, barChartOptions)
-
 
 
     })

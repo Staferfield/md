@@ -1,4 +1,4 @@
-      <div class="box box-success collapsed-box">
+      <div class="box box-success box-solid collapsed-box">
         <!-- box-header -->
         <div class="box-header with-border">
           <h3 class="box-title">Tambah Nota Penitipan</h3>

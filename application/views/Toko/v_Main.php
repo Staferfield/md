@@ -25,33 +25,29 @@
             <div class="box-body table-responsive">
                 <!-- /.box-header -->
 
-                <div class="box-header">
-                    <a class="btn btn-success" href="<?php echo site_url('toko/add'); ?>">Tambah Toko</a>
-                </div>
-
                 <table id="dataTable" class="table table-striped table-hover">
-                    <thead class="thead-dark text-center">
+                    <thead class="thead-dark">
                         <tr>
-                            <th class="text-center">No</th>
-                            <th class="text-center">Nama</th>
-                            <th class="text-center">Pemilik</th>
-                            <th class="text-center">Alamat</th>
-                            <th class="text-center">No Telp</th>
-                            <th class="text-center">Keterangan</th>
-                            <th class="text-center">Kelola</th>
+                            <th>No</th>
+                            <th>Nama</th>
+                            <th>Pemilik</th>
+                            <th>Alamat</th>
+                            <th>No Telp</th>
+                            <th>Keterangan</th>
+                            <th>Kelola</th>
                         </tr>
                     </thead>
-                    <tbody class="text-center">
+                    <tbody class="">
                         <?php $i = 1;
                         foreach ($toko as $item) { ?>
                             <tr>
                                 <td><?php echo $i;
                                     $i++ ?></td>
-                                <td class="text-left"><?php echo $item['nama']; ?></td>
-                                <td class="text-center"><?php echo $item['pemilik']; ?></td>
-                                <td class="text-center"><?php echo $item['alamat']; ?></td>
-                                <td class="text-center"><?php echo $item['no_telp']; ?></td>
-                                <td class="text-center"><?php echo $item['keterangan']; ?></td>
+                                <td><?php echo $item['nama']; ?></td>
+                                <td><?php echo $item['pemilik']; ?></td>
+                                <td><?php echo $item['alamat']; ?></td>
+                                <td><?php echo $item['no_telp']; ?></td>
+                                <td><?php echo $item['keterangan']; ?></td>
 
                                 <td>
                                     <div class="btn-group">
@@ -68,6 +64,8 @@
             <!-- /.box-body -->
         </div>
         <!-- /.box -->
+
+        <?php $this->load->view('Toko/v_Tambah') ?>
 
     </section>
     <!-- /.content -->

@@ -7,14 +7,17 @@
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(showPosition);
         } else {
-            latt.value = "Geolocation tidak didukung.";
-            long.value = "Geolocation tidak didukung.";
+            // Tampilkan alert apabila geolokasi berhasil
+            window.alert("Geolokasi tidak didukung");
         }
     }
 
     function showPosition(position) {
         latt.value = position.coords.latitude;
         long.value = position.coords.longitude;
+
+        // Tampilkan alert apabila geolokasi berhasil
+        window.alert("Geolokasi berhasil");
     }
 
 </script>

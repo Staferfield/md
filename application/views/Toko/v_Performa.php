@@ -25,7 +25,7 @@
             </div>
             <div class="box-body">
 
-                <table id="dataTable" class="table table-striped table-hover text-center">
+                <table id="dataTable" class="table table-striped table-hover">
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">No</th>
@@ -82,7 +82,7 @@
             </div>
             <div class="box-body">
 
-                <table id="dataTable2" class="table table-striped table-hover text-center">
+                <table id="dataTable2" class="table table-striped table-hover">
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">No</th>

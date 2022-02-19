@@ -14,7 +14,7 @@
     <section class="content">
 
       <!-- Default box -->
-      <div class="box box-info box-solid">
+      <div class="box box-success box-solid">
         <div class="box-header with-border">
           <h3 class="box-title">Tambah Nota Penjualan
           </h3>
@@ -79,13 +79,19 @@
 
               </div>
             </div>
+
             <div class="col-md-3">
-              <div class="form-group">
+               <label class="invisible" for="submit">Simpan</label>
+               <div class="row">
+                 <div class="col-sm-6">
+                   <a href="<?php echo site_url('Penjualan'); ?>"><span class="btn btn-danger btn-block">Batal</span></a>
+                 </div>
+                 <div class="col-sm-6">
+                   <button id="submit" type="submit" class="btn btn-success btn-block">Simpan</button>
+                 </div>
+               </div>
+             </div>
 
-
-                <a href="<?php echo site_url('Penjualan'); ?>"><span class="btn btn-danger">Batal</span>
-                </a>
-                <button type="submit" class="btn btn-success">Simpan</button>
           </form>
         </div>
       </div>

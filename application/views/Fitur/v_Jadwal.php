@@ -5,8 +5,8 @@
             <small>it all starts here</small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Toko</a></li>
+            <li><a href="<?php echo site_url('Dashboard') ?>"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="<?php echo site_url('Toko') ?>">Toko</a></li>
             <li class="active">Jadwal</li>
         </ol>
     </section>
@@ -17,7 +17,7 @@
         <!-- Default box -->
         <div class="box box-warning box-solid">
             <div class="box-header with-border">
-                <h3 class="box-title">Jadwal Pengambilan</h3>
+                <h3 class="box-title">Jadwal Pengambilan (Semua)</h3>
 
                 <div class="box-tools pull-right">
                     <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="" data-original-title="Collapse">
@@ -36,10 +36,10 @@
                             <th>Tanggal Penitipan</th>
                             <th>Tanggal Pengambilan</th>
                             <th>Keterangan</th>
-                            <th>Kelola</th>
+                            <th>Tindakan</th>
                         </tr>
                     </thead>
-                    <tbody class="text-center">
+                    <tbody class="">
                         <?php $i = 1;
                         foreach ($jadwal as $item) { ?>
                             <tr>

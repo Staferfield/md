@@ -19,7 +19,7 @@ class Login extends CI_Controller{
         $password = md5($this->input->post('password'));
 
         $user = $this->M_login->getUserLogin($email, $password)->num_rows();
-
+        // TODO MD5 tidak aman, gunakan fitur password_hash() dan password_verify() 
         if ($user > 0) {
             $data = $this->M_login->getUserLogin($email, $password)->row_array();
             $data_session = array(

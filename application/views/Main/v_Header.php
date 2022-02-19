@@ -38,7 +38,7 @@
   <!-- <link rel="stylesheet" href="<?php //echo base_url().'' ?>"> -->
 
 </head>
-<body class="skin-red sidebar-mini">
+<body class="skin-red sidebar-mini" style="background-color: #222D32;">
 
 <header class="main-header">
     <!-- Logo -->
@@ -87,7 +87,7 @@
               <li class="user-footer">
 
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="<?php echo site_url('Logout'); ?>" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>

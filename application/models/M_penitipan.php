@@ -62,6 +62,19 @@ class M_penitipan extends CI_Model {
 		return $query->row_array();
 	}
 
+    public function getPenitipanBulanIni()
+	{
+		$this->db->select('nota_penitipan.id AS No Nota, toko.nama AS Nama Toko, user.nama AS Nama Sales, tanggal, status AS Sudah');
+		$this->db->from('nota_penitipan');
+		$this->db->join('user','user.id = nota_penitipan.sales_id');
+		$this->db->join('toko','toko.id=nota_penitipan.toko_id');
+		$this->db->where('month(tanggal)', date('m'));
+		$this->db->where('year(tanggal)', date('Y'));
+
+        $query = $this->db->get();
+		return $query->result_array();
+	}
+
 	public function insertPenitipan($data)
 	{
 		$this->db->insert('nota_penitipan', $data);
@@ -80,8 +93,6 @@ class M_penitipan extends CI_Model {
 		return $result->row_array();
 	}
 
-
-	
 	public function deletePenitipan($id)
 	{
 		$result = $this->db->get_where('nota_penitipan', array('id' => $id));
@@ -90,19 +101,6 @@ class M_penitipan extends CI_Model {
 		$this->db->delete('nota_penitipan');
 
 		return $result->row_array();
-	}
-
-    public function getPenitipanBulanIni()
-	{
-		$this->db->select('nota_penitipan.id AS No Nota, toko.nama AS Nama Toko, user.nama AS Nama Sales, tanggal, status AS Sudah');
-		$this->db->from('nota_penitipan');
-		$this->db->join('user','user.id = nota_penitipan.sales_id');
-		$this->db->join('toko','toko.id=nota_penitipan.toko_id');
-		$this->db->where('month(tanggal)', date('m'));
-		$this->db->where('year(tanggal)', date('Y'));
-
-        $query = $this->db->get();
-		return $query->result_array();
 	}
 
 	public function cekPenitipanExist($id)

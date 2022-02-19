@@ -25,7 +25,7 @@
             </div>
             <div class="box-body">
 
-                <table id="dataTable" class="table table-striped table-hover text-center">
+                <table id="dataTable" class="table table-striped table-hover">
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">No</th>
@@ -47,11 +47,11 @@
                                 <td><?php echo $i;
                                     $i++ ?></td>
                                 <td><?php echo $akun['nama'];?></td>
-                                <td><?php echo 'Rp. '.number_format($akun['harga'],0,',','.');?></td>
+                                <td><?php echo number_format($akun['harga'],0,',','.');?></td>
                                 <td><?php echo $akun['jml_titip'];?></td>
                                 <td><?php echo $akun['jml_laku'];?></td>
                                 <td><?php echo $akun['jml_retur'];?></td>
-                                <td><?php IF($akun['subtotal']<> 0){echo 'Rp. '.number_format($akun['subtotal'],0,',','.');}?></td>
+                                <td><?php IF($akun['subtotal']<> 0){echo number_format($akun['subtotal'],0,',','.');}?></td>
                                 <td>
                                     <div class="progress-group">
                                     <span class="progress-number pull-right btn-xs bg-gray btn-flat"><small><?php echo $akun['performa'];?>%</small></span>
@@ -86,7 +86,7 @@
             </div>
             <div class="box-body">
 
-                <table id="dataTable2" class="table table-striped table-hover text-center">
+                <table id="dataTable2" class="table table-striped table-hover">
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">No</th>
@@ -108,11 +108,11 @@
                                 <td><?php echo $i;
                                     $i++ ?></td>
                                 <td><?php echo $akun['nama'];?></td>
-                                <td><?php echo 'Rp. '.number_format($akun['harga'],0,',','.');?></td>
+                                <td><?php echo number_format($akun['harga'],0,',','.');?></td>
                                 <td><?php echo $akun['jml_titip'];?></td>
                                 <td><?php echo $akun['jml_laku'];?></td>
                                 <td><?php echo $akun['jml_retur'];?></td>
-                                <td><?php IF($akun['subtotal']<> 0){echo 'Rp. '.number_format($akun['subtotal'],0,',','.');}?></td>
+                                <td><?php IF($akun['subtotal']<> 0){echo number_format($akun['subtotal'],0,',','.');}?></td>
                                 <td>
                                     <div class="progress-group">
                                     <span class="progress-number pull-right btn-xs bg-gray btn-flat"><small><?php echo $akun['performa'];?>%</small></span>

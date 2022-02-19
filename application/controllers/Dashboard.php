@@ -24,7 +24,7 @@ class Dashboard extends CI_Controller{
         // Manajer -> 2
         if ($level==2 || $level==0) {
             $data['performa_sales'] = $this->M_user->getSalesPerformanceThirtyDay();
-            // $data['penjualan_monthly']= $this->M_penjualan->getPenjualanPerbulan();
+            $data['penjualan_monthly']= $this->M_penjualan->getPenjualanPerbulan();
             // $data['performa_roti'] = $this->M_roti->getRotiPerformance();
             // $data['performa_sales'] = $this->M_toko->getTokoPerformance();
             // $data['performa_toko'] = $this->M_user->getSalesPerformance();
@@ -34,12 +34,9 @@ class Dashboard extends CI_Controller{
             $id=$this->session->userdata("id");
             // apabila root, tampilkan semua jadwal
             if($level==0){
-                $id='%';
-                $data['jadwal_sales'] = $this->M_toko->getJadwalPengambilanBySalesID($id);
-                
-            }else {
-                $data['jadwal_sales'] = $this->M_toko->getJadwalPengambilanBySalesID($id);
-                }
+                $id='%';    
+            }
+            $data['jadwal_sales'] = $this->M_toko->getJadwalPengambilanBySalesID($id);
         }
 
         $this->load->view('Main/v_Header');

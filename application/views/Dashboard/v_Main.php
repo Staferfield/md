@@ -4,7 +4,7 @@
         Dashboard
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="<?php echo site_url('Dashboard') ?>"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Dashboard</li>
       </ol>
     </section>
@@ -32,7 +32,6 @@
 
         <!-- Apabila sales -->
         <?php if ($this->session->userdata("level") == 4 || $this->session->userdata("level") == 0) {
-
           // Load jadwal sales
           $this->load->view('Dashboard/widget_Jadwal');
         } ?>

@@ -51,8 +51,8 @@
                             <tr>
                                 <td><?php echo $i;
                                     $i++ ?></td>
-                                <td class=""><?php echo $item['roti_nama']; ?></td>
-                                <td class=""><?php echo $item['jml_titip']; ?></td>
+                                <td><?php echo $item['roti_nama']; ?></td>
+                                <td><?php echo $item['jml_titip']; ?></td>
                                 <td>
                                     <div class="btn-group">
                                         <a class="btn btn-sm btn-info" href="<?php echo site_url('item_penitipan/edit/' . $item['id']); ?>"><i class="fa fa-fw fa-pencil"></i> Edit</a>

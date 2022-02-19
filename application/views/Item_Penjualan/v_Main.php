@@ -40,14 +40,14 @@
                 <table class="table table-striped table-hover">
                     <thead class="thead-dark">
                         <tr>
-                            <th class="">No</th>
-                            <th class="">Nama Roti</th>
-                            <th class="">Jumlah Titip</th>
-                            <th class="">Jumlah Retur</th>
-                            <th class="">Jumlah Laku</th>
-                            <th class="">Harga</th>
-                            <th class="">Subtotal</th>
-                            <th class="">Kelola</th>
+                            <th>No</th>
+                            <th>Nama Roti</th>
+                            <th>Jumlah Titip</th>
+                            <th>Jumlah Retur</th>
+                            <th>Jumlah Laku</th>
+                            <th>Harga</th>
+                            <th>Subtotal</th>
+                            <th>Kelola</th>
                         </tr>
                     </thead>
                     <tbody class="">
@@ -56,12 +56,12 @@
                             <tr>
                                 <td><?php echo $i;
                                     $i++ ?></td>
-                                <td class=""><?php echo $item['roti_nama']; ?></td>
-                                <td class=""><?php echo $item['jml_titip']; ?></td>
-                                <td class=""><?php echo $item['jml_retur']; ?></td>
-                                <td class=""><?php echo $item['jml_laku']; ?></td>
-                                <td class=""><?php echo $item['harga']; ?></td>
-                                <td class=""><?php echo $item['subtotal']; ?></td>
+                                <td><?php echo $item['roti_nama']; ?></td>
+                                <td><?php echo $item['jml_titip']; ?></td>
+                                <td><?php echo $item['jml_retur']; ?></td>
+                                <td><?php echo $item['jml_laku']; ?></td>
+                                <td><?php echo $item['harga']; ?></td>
+                                <td><?php echo $item['subtotal']; ?></td>
                                 <td>
                                     <div class="btn-group">
                                         <a class="btn btn-sm btn-info" href="<?php echo site_url('item_penjualan/edit/' . $item['id']); ?>"><i class="fa fa-fw fa-pencil"></i> Edit</a>

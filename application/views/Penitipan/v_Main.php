@@ -28,13 +28,13 @@
                 <table id="dataTable" class="table table-striped table-hover">
                     <thead class="thead-dark">
                         <tr>
-                            <th class="">No Nota</th>
-                            <th class="">Nama Toko</th>
-                            <th class="">Nama Sales</th>
-                            <th class="">Tanggal</th>
-                            <th class="">Nota Jual</th>
-                            <th class="">Item</th>
-                            <th class="">Kelola</th>
+                            <th>No Nota</th>
+                            <th>Nama Toko</th>
+                            <th>Nama Sales</th>
+                            <th>Tanggal</th>
+                            <th>Nota Jual</th>
+                            <th>Item</th>
+                            <th>Kelola</th>
                         </tr>
                     </thead>
                     <tbody class="">

@@ -1,78 +1,103 @@
-<div class="box box-success collapsed-box">
-  <!-- box-header -->
-  <div class="box-header with-border">
-    <h3 class="box-title">Tambah Toko</h3>
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Toko
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="<?php echo base_url() ?>"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Toko</li>
+      </ol>
+    </section>
 
-    <div class="box-tools pull-right">
-      <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
-    </div>
-  </div>
+    <!-- Main content -->
+    <section class="content">
 
-  <!-- /.box-header -->
-  <div class="box-body">
-    <div class="row">
+      <div class="box box-success box-solid">
+        <!-- box-header -->
+        <div class="box-header with-border">
+          <h3 class="box-title">Tambah Toko</h3>
 
-      <form action="<?php echo site_url('toko/addAction'); ?>" method="post">
-
-        <div class="col-md-4">
-          <div class="form-group">
-            <label for="nama">Nama Toko:</label>
-            <input type="text" class="form-control" name="nama" placeholder="Nama" required="required" value="<?php  ?>" maxlength="30" />
-
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="form-group">
-            <label for="pemilik">Nama Pemilik:</label>
-            <input type="text" class="form-control" name="pemilik" placeholder="Pemilik" required="required" value="<?php  ?>" maxlength="30" />
-
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="form-group">
-            <label for="no_telp">No Telp:</label>
-            <input type="text" name="no_telp" class="form-control" placeholder="No Telp" required="required" value="<?php  ?>" maxlength="13" />
-
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="form-group">
-            <label for="alamat">Alamat:</label>
-            <textarea name="alamat" class="form-control" placeholder="Alamat" required="required" maxlength="100"><?php  ?></textarea>
-
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="form-group">
-            <label for="keterangan">Keterangan Tambahan:</label>
-            <textarea name="keterangan" class="form-control" placeholder="Keterangan Tambahan" maxlength="50"><?php  ?></textarea>
-
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="form-group">
-            <label for="geo_latt">Posisi GPS:</label>
-            <input id="geo_latt" type="text" class="form-control" name="geo_latt" placeholder="Geo Lattitude" value="<?php  ?>" />
-            <input id="geo_long" type="text" class="form-control" name="geo_long" placeholder="Geo Longitude" value="<?php  ?>" />
-
-            <button class="btn btn-xs btn-block btn-primary" type="button" onclick="getLocation()">Dapatkan Geolokasi</button>
-
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
           </div>
         </div>
 
+        <!-- /.box-header -->
+        <div class="box-body">
+          <div class="row">
 
-        <a href="<?php echo site_url('toko'); ?>"><span class="btn btn-danger">Batal</span>
-        </a>
-        <button type="submit" class="btn btn-success">Simpan</button>
+            <form action="<?php echo site_url('toko/addAction'); ?>" method="post">
 
-      </form>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="nama">Nama Toko</label>
+                  <input type="text" class="form-control" name="nama" placeholder="Nama Toko" maxlength="30" required />
+                </div>
+              </div>
 
-    </div>
-    <!-- /.row -->
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="pemilik">Nama Pemilik</label>
+                  <input type="text" class="form-control" name="pemilik" placeholder="Pemilik" maxlength="30" required/>
+                </div>
+              </div>
 
-  </div>
-  <!-- /.box-body -->
-</div>
-<!-- /.box -->
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="alamat">Alamat</label>
+                  <textarea class="form-control" rows="3" name="alamat" placeholder="Alamat" maxlength="100" required></textarea>
+                </div>
+              </div>
 
-<?php $this->load->view('Script/geolokasi') ?>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="keterangan">Keterangan</label>
+                  <textarea class="form-control" rows="3" name="keterangan" placeholder="Keterangan Tambahan" maxlength="50"></textarea>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="no_telp">No Telp</label>
+                  <input class="form-control" type="text" name="no_telp" placeholder="No Telp" required="required" maxlength="13" />
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="alamat">Geolokasi</label>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <input id="geo_latt" class="form-control" type="text" name="geo_latt" placeholder="Geo Lattitude" />
+                    </div>
+                    <div class="col-md-4">
+                      <input id="geo_long" class="form-control" type="text" name="geo_long" placeholder="Geo Longitude" />
+                    </div>
+                    <div class="col-md-4">
+                      <button class="btn btn-info btn-block" type="button" onclick="getLocation()">Dapatkan GPS</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <a href="<?php echo site_url('toko'); ?>"><span class="btn btn-danger btn-block">Batal</span></a>
+              </div>
+              <div class="col-sm-6">
+                <button type="submit" class="btn btn-success btn-block">Simpan</button>
+              </div>
+
+            </form>
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.box-body -->
+      </div>
+
+
+    </section>
+    <!-- /.content -->
+
+    <?php $this->load->view('Script/geolokasi') ?>

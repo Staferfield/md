@@ -27,47 +27,45 @@
                 <table id="dataTable" class="table table-striped table-hover">
                     <thead class="thead-dark">
                         <tr>
-                            <th scope="col" class="text-center">No</th>
-                            <th scope="col" class="text-center">Nama</th>
-                            <th scope="col" class="text-center">Alamat</th>
-                            <th scope="col" class="text-center">Banyak Pengantaran</th>
-                            <th scope="col" class="text-center">Banyak Pengambilan</th>
-                            <th scope="col" class="text-center">Kontribusi</th>
+                            <th scope="col">No</th>
+                            <th scope="col">Nama</th>
+                            <th scope="col">Alamat</th>
+                            <th scope="col">Banyak Pengantaran</th>
+                            <th scope="col">Banyak Pengambilan</th>
+                            <th scope="col">Kontribusi</th>
                         </tr>
                     </thead>
 
-                    <tbody id="load_data" class="text-center">
+                    <tbody id="load_data" class="">
                         <?php $i = 1;
-                        foreach ($perf_bulan as $akun) {
+                        foreach ($perf_bulan as $data) {
+                            // Kalkulasi performa
+                            $data['performa']=round(($data['pengantaran']+$data['pengambilan']) / $data['total'] * 100);
                         ?>
                             <tr>
                                 <td><?php echo $i;
                                     $i++ ?></td>
-                                <td><?php echo $akun['nama']; ?></td>
-                                <td><?php echo $akun['alamat']; ?></td>
-                                <td><?php echo $akun['pengantaran']; ?></td>
-                                <td><?php echo $akun['pengambilan']; ?></td>
+                                <td><?php echo $data['nama']; ?></td>
+                                <td><?php echo $data['alamat']; ?></td>
+                                <td><?php echo $data['pengantaran']; ?></td>
+                                <td><?php echo $data['pengambilan']; ?></td>
                                 <td>
                                     <div class="progress-group">
-                                        <span class="progress-number pull-right btn-xs bg-navy btn-flat"><small><?php echo round($akun['performa'] / $akun['total'] * 100); ?>%</small></span>
+                                        <span class="progress-number pull-right btn-xs bg-gray btn-flat"><small><?php echo $data['performa']; ?>%</small></span>
                                         <div class="progress">
-                                            <div class="progress-bar progress-bar-green" style="width: <?php echo round($akun['performa'] / $akun['total'] * 100); ?>%"></div>
+                                            <div class="progress-bar progress-bar-green" style="width: <?php echo $data['performa']; ?>%"></div>
                                         </div>
                                     </div>
                                     <!-- /.progress-group -->
                                 </td>
-
                             </tr>
                         <?php } ?>
-
-
                     </tbody>
                 </table>
             </div>
             <!-- /.box-body -->
         </div>
         <!-- /.box -->
-
 
         <!-- Default box -->
         <div class="box box-info box-solid">
@@ -83,40 +81,39 @@
                 <table id="dataTable2" class="table table-striped table-hover">
                     <thead class="thead-dark">
                         <tr>
-                            <th scope="col" class="text-center">No</th>
-                            <th scope="col" class="text-center">Nama</th>
-                            <th scope="col" class="text-center">Alamat</th>
-                            <th scope="col" class="text-center">Banyak Pengantaran</th>
-                            <th scope="col" class="text-center">Banyak Pengambilan</th>
-                            <th scope="col" class="text-center">Kontribusi</th>
+                            <th scope="col">No</th>
+                            <th scope="col">Nama</th>
+                            <th scope="col">Alamat</th>
+                            <th scope="col">Banyak Pengantaran</th>
+                            <th scope="col">Banyak Pengambilan</th>
+                            <th scope="col">Kontribusi</th>
                         </tr>
                     </thead>
 
-                    <tbody id="load_data" class="text-center">
+                    <tbody id="load_data" class="">
                         <?php $i = 1;
-                        foreach ($performa as $akun) {
+                        foreach ($performa as $data) {
+                            // Kalkulasi performa
+                            $data['performa']=round(($data['pengantaran']+$data['pengambilan']) / $data['total'] * 100);
                         ?>
                             <tr>
                                 <td><?php echo $i;
                                     $i++ ?></td>
-                                <td><?php echo $akun['nama']; ?></td>
-                                <td><?php echo $akun['alamat']; ?></td>
-                                <td><?php echo $akun['pengantaran']; ?></td>
-                                <td><?php echo $akun['pengambilan']; ?></td>
+                                <td><?php echo $data['nama']; ?></td>
+                                <td><?php echo $data['alamat']; ?></td>
+                                <td><?php echo $data['pengantaran']; ?></td>
+                                <td><?php echo $data['pengambilan']; ?></td>
                                 <td>
                                     <div class="progress-group">
-                                        <span class="progress-number pull-right btn-xs bg-gray btn-flat"><small><?php echo round($akun['performa'] / $akun['total'] * 100); ?>%</small></span>
+                                        <span class="progress-number pull-right btn-xs bg-gray btn-flat"><small><?php echo $data['performa']; ?>%</small></span>
                                         <div class="progress">
-                                            <div class="progress-bar progress-bar-green" style="width: <?php echo round($akun['performa'] / $akun['total'] * 100); ?>%"></div>
+                                            <div class="progress-bar progress-bar-green" style="width: <?php echo $data['performa']; ?>%"></div>
                                         </div>
                                     </div>
                                     <!-- /.progress-group -->
                                 </td>
-
                             </tr>
                         <?php } ?>
-
-
                     </tbody>
                 </table>
             </div>

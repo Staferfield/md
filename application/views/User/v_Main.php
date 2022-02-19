@@ -37,10 +37,18 @@
                     <tbody id="load_data" class="">
                         <?php $i = 1;
                         foreach ($user as $akun) {
-                            // Jangan tampilkan akun root dan Pemilik
+                            if($this->session->userdata('level')>=2){
+                            // Jangan tampilkan akun root, Pemilik dan Manajer apabila manajer
+                            if ($akun['level'] <= 2) {
+                                    continue;
+                                }
+                            }else {
+                            // Jangan tampilkan akun root dan Pemilik apabila owner
                             if ($akun['level'] <= 1) {
-                                continue;
-                            } ?>
+                                    continue;
+                                }
+                            }
+                             ?>
                             <tr>
                                 <td><?php echo $i;
                                     $i++ ?></td>

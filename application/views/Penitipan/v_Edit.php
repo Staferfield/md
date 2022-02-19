@@ -29,7 +29,7 @@
          <form action="<?php echo site_url('penitipan/editAction'); ?>" method="post">
 
            <input class="form-control" type="hidden" name="id" placeholder="id" required="required" value="<?php echo $penitipan['id']; ?>" hidden />
-           <div class="col-md-4">
+           <div class="col-md-3">
              <div class="form-group">
 
                <label for="toko_id">Pilih Toko:</label>
@@ -42,22 +42,22 @@
                </select>
              </div>
            </div>
-           <div class="col-md-4">
+           <div class="col-md-3">
              <div class="form-group">
 
                <label for="sales_id">Pilih Sales:</label>
                <select class="form-control" id="sales_id" name="sales_id">
                  <?php foreach ($sales as $s) {
-                    echo '<option value="'.$s['id'].'" ';
-                    if($penitipan['sales_id'] == $s['id']) {
-                     echo "selected>";
+                    echo '<option value="' . $s['id'] . '" ';
+                    if ($penitipan['sales_id'] == $s['id']) {
+                      echo "selected>";
                     };
-                    echo $s['nama'].'</option>';
-                 } ?>
+                    echo $s['nama'] . '</option>';
+                  } ?>
                </select>
              </div>
            </div>
-           <div class="col-md-4">
+           <div class="col-md-3">
              <div class="form-group">
 
                <!-- #PERLU_CHECK -->
@@ -67,13 +67,18 @@
            </div>
            <input class="form-control" type="hidden" name="status" placeholder="Status pengambilan" required="required" value="<?php echo $penitipan['status']; ?>" />
 
-           <div class="col-md-4">
-             <div class="form-group">
-               <a href="<?php echo site_url('Penitipan'); ?>"><span class="btn btn-danger">Batal</span>
-               </a>
-               <button type="submit" class="btn btn-primary">Simpan</button>
+           <div class="col-md-3">
+             <label class="invisible" for="submit">Simpan</label>
+             <div class="row">
+               <div class="col-sm-6">
+                 <a href="<?php echo site_url('Penitipan'); ?>"><span class="btn btn-danger btn-block">Batal</span></a>
+               </div>
+               <div class="col-sm-6">
+                 <button id="submit" type="submit" class="btn btn-success btn-block">Simpan</button>
+               </div>
              </div>
            </div>
+
          </form>
        </div>
        <!-- /.box-body -->

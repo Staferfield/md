@@ -166,7 +166,7 @@ SELECT
 ;
 
 
--- Kinerja Sales (Lengkap)   #
+-- todo REDO! Kinerja Sales (Lengkap)   #
 SELECT 
         user.id, 
         user.nama, 
@@ -183,7 +183,7 @@ SELECT
         user.nama
 ;
 
--- Kinerja Sales (Bulan lalu)   #
+-- todo REDO! Kinerja Sales (Bulan lalu)   #
 SELECT 
         user.id, 
         user.nama, 
@@ -206,23 +206,46 @@ AND MONTH(nota_penitipan.tanggal)=MONTH(CURRENT_DATE-INTERVAL 1 MONTH)
         user.nama
 ;
 
-SELECT 
-        user.id
-        , user.nama
-        , user.alamat
-        , (SELECT IFNULL(count(id), 0) FROM nota_penitipan WHERE sales_id=user.id AND tanggal >= DATE_SUB(NOW(), INTERVAL 300 DAY) ) AS pengantaran
-        , (SELECT IFNULL(count(id), 0) FROM nota_penjualan WHERE sales_id=user.id AND tanggal >= DATE_SUB(NOW(), INTERVAL 300 DAY) ) AS pengambilan
-        -- , (SELECT IFNULL(sum(jml_titip), 0) FROM item_penjualan LEFT JOIN nota_penitipan ON nota_penitipan.sales_id=user.id WHERE nota_penitipan.sales_id=user.id AND nota_penitipan.tanggal >= DATE_SUB(NOW(), INTERVAL 300 DAY) ) AS pengambilan
-        -- , IFNULL(count(nota_penjualan.id), 0) AS pengambilan
-        -- , IFNULL(sum(item_penitipan.jml_titip), 0) AS pengambilan
-    FROM user
-        -- LEFT JOIN nota_penitipan ON nota_penitipan.sales_id=user.id
-        -- LEFT JOIN nota_penjualan ON nota_penjualan.sales_id=user.id
-        -- LEFT JOIN item_penitipan ON item_penitipan.nota_id=nota_penitipan.id AND nota_penitipan.sales_id=user.id
-    WHERE level=4
-    GROUP BY 
-        user.id
+-- * Good (replace above with this?) Kinerja Sales (30 hari terakhir)
+SELECT
+    user.id
+    , user.nama
+    , user.alamat
+    , (SELECT COUNT(id) FROM nota_penjualan WHERE sales_id=user.id AND tanggal >= DATE_SUB(NOW(), INTERVAL 30 DAY)) AS pengantaran
+    , (SELECT COUNT(id) FROM nota_penitipan WHERE sales_id=user.id AND tanggal >= DATE_SUB(NOW(), INTERVAL 30 DAY)) AS pengambilan
+    , (SELECT COUNT(id) FROM nota_penjualan WHERE tanggal >= DATE_SUB(NOW(), INTERVAL 30 DAY))+(SELECT COUNT(id) FROM nota_penitipan WHERE tanggal >= DATE_SUB(NOW(), INTERVAL 30 DAY)) AS total
+    , ifnull(sum(item_penitipan.jml_titip),0) AS jml_antar
+    , (SELECT sum(jml_titip) FROM item_penitipan RIGHT JOIN nota_penitipan ON nota_penitipan.id=item_penitipan.nota_id WHERE tanggal >= DATE_SUB(NOW(), INTERVAL 30 DAY)) AS total_antar
+FROM user
+    Left JOIN nota_penitipan ON nota_penitipan.sales_id=user.id AND nota_penitipan.tanggal >= DATE_SUB(NOW(), INTERVAL 30 DAY)
+    -- LEFT JOIN nota_penjualan ON nota_penjualan.sales_id=user.id AND nota_penjualan.tanggal >= DATE_SUB(NOW(), INTERVAL 30 DAY)
+    LEFT JOIN item_penitipan ON item_penitipan.nota_id=nota_penitipan.id AND nota_penitipan.sales_id=user.id AND nota_penitipan.tanggal >= DATE_SUB(NOW(), INTERVAL 30 DAY)
+    -- LEFT JOIN item_penjualan ON item_penjualan.nota_id=nota_penjualan.id AND nota_penjualan.sales_id=user.id
+WHERE level=4
+GROUP BY 
+    user.id
 ;
+
+
+-- -- Kinerja Sales (30 hari terakhir)
+-- SELECT
+--         user.id
+--         , user.nama
+--         , user.alamat
+--         , ifnull(count(nota_penitipan.id),0) AS pengantaran
+--         , ifnull(count(nota_penjualan.id),0) AS pengambilan
+--         , ifnull(sum(item_penitipan.jml_titip),0) AS roti_terantar
+--         , ifnull(count(nota_penitipan.id)+count(nota_penjualan.id),0) AS performa
+--         , (SELECT COUNT(id) FROM nota_penjualan WHERE tanggal >= DATE_SUB(NOW(), INTERVAL 30 DAY))+(SELECT COUNT(id) FROM nota_penitipan WHERE tanggal >= DATE_SUB(NOW(), INTERVAL 30 DAY)) AS total
+--     FROM user
+--         Left JOIN nota_penitipan ON nota_penitipan.sales_id=user.id AND nota_penitipan.tanggal >= DATE_SUB(NOW(), INTERVAL 30 DAY)
+--         LEFT JOIN nota_penjualan ON nota_penjualan.sales_id=user.id AND nota_penjualan.tanggal >= DATE_SUB(NOW(), INTERVAL 30 DAY)
+--         LEFT JOIN item_penitipan ON item_penitipan.nota_id=nota_penitipan.id AND nota_penitipan.sales_id=user.id AND nota_penitipan.tanggal >= DATE_SUB(NOW(), INTERVAL 30 DAY)
+--         -- LEFT JOIN item_penjualan ON item_penjualan.nota_id=nota_penjualan.id AND nota_penjualan.sales_id=user.id
+--     WHERE level=4
+--     GROUP BY 
+--         user.id, nota_penitipan.id, nota_penjualan.id, item_penitipan.nota_id
+-- ;
 SELECT 
     IFNULL(count(id), 0) 
     FROM nota_penitipan 

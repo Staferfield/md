@@ -44,7 +44,8 @@
              <div class="col-md-3">
                <div class="form-group">
                  <label for="sales_id">Pilih Sales:</label>
-                 <select class="form-control" id="sales_id" name="sales_id" <?php if ($this->session->userdata('level') == 4) {
+                 <select class="form-control" id="sales_id" name="sales_id" <?php
+                                                                            if ($this->session->userdata('level') == 4) {
                                                                               echo 'readonly';
                                                                             } ?>>
                    <?php
@@ -73,17 +74,16 @@
                </div>
              </div>
 
-             <!-- <div class="col-md-3">
-                <div class="form-group"> -->
-             <!-- #PERLU_CHECK rubah format waktu -->
-             <!-- <label for="tanggal">Banyak Jenis Roti:</label>
-              <input class="form-control" type="number" name="jumlah" placeholder="Jumlah Barang" value="<?php ?>" />
-                </div>
-              </div> -->
-
-             <div class="col-sm-3">
+             <div class="col-md-3">
                <label class="invisible" for="submit">Simpan</label>
-               <button id="submit" type="submit" class="btn btn-success btn-block">Simpan</button>
+               <div class="row">
+                 <div class="col-sm-6">
+                   <a href="<?php echo site_url('Penitipan'); ?>"><span class="btn btn-danger btn-block">Batal</span></a>
+                 </div>
+                 <div class="col-sm-6">
+                   <button id="submit" type="submit" class="btn btn-success btn-block">Simpan</button>
+                 </div>
+               </div>
              </div>
 
            </form>
