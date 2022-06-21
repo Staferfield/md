@@ -33,13 +33,15 @@ class M_item_penitipan extends CI_Model {
 
     public function getItemPenitipanByNotaID($nota_id)
 	{
-		$this->db->select('item_penitipan.id AS id, nota_id, roti.id AS roti_id, roti.nama AS roti_nama, jml_titip');
-		$this->db->from('item_penitipan');
-		$this->db->join('nota_penitipan','item_penitipan.nota_id=nota_penitipan.id', 'left');
-		$this->db->join('roti','item_penitipan.roti_id=roti.id', 'left');
-		$this->db->where('item_penitipan.nota_id', $nota_id);
+		$query = $this->db->select('item_penitipan.id AS id, nota_id, roti.id AS roti_id, roti.nama AS roti_nama, jml_titip')
+		->from('item_penitipan')
+	    ->join('nota_penitipan','item_penitipan.nota_id=nota_penitipan.id', 'left')
+		->join('roti','item_penitipan.roti_id=roti.id', 'left')
+		->where('item_penitipan.nota_id', $nota_id);
 
-        $query = $this->db->get();
+		
+
+        $query->where('is_active',true);
 		return $query->result_array();
 	}
 

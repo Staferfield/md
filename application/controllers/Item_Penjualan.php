@@ -93,7 +93,7 @@ class Item_Penjualan extends CI_Controller{
         if($this->db->affected_rows()){
             redirect('Item_Penjualan/byNotaID/'.$nota_id);
         } else {
-            redirect('Item_Penjualan/Edit/'.$id);
+            redirect("Item_Penjualan/Edit/$id");
         } 
     }
 

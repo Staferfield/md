@@ -3,7 +3,7 @@ class Roti extends CI_Controller{
     function __construct(){
         parent::__construct();
         $this->load->model('M_roti');
-        
+
         // Redirect Login apabila belum
         if($this->session->userdata('login') != true){
             redirect('Login');
@@ -27,7 +27,7 @@ class Roti extends CI_Controller{
     public function performa(){
         $data['performa'] = $this->M_roti->getRotiPerformance();
         $data['perf_lalu'] = $this->M_roti->getRotiPerformanceLastMonth();
-        
+
         $this->load->view('Main/v_Header');
         $this->load->view('Main/v_Sidebar');
         $this->load->view('Roti/v_Performa', $data);

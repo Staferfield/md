@@ -21,6 +21,7 @@
           // Load Grafik Penitipan & Penjualan
           $this->load->view('Dashboard/widget_PenjualanPerbulan');
           $this->load->view('Dashboard/widget_PenjualanBar');
+
         } ?>
 
         <!-- Apabila manajer -->

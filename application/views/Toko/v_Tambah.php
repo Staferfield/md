@@ -63,7 +63,6 @@
                                 <button class="btn btn-info btn-block" type="button" onclick="getLocation()">Dapatkan GPS</button>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
